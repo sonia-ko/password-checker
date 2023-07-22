@@ -22,4 +22,4 @@ If the password is strong, all sections are green;
 
 ## Demo
 
-You can see the DEMO [here](https://facebook.github.io/create-react-app/docs/getting-started).
+You can see the DEMO [here](https://password-checker-gamma.vercel.app/).
