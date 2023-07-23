@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin: 0.5rem 0 1rem;
+}
+
+.container .section {
+  width: 32.5%;
+  height: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.empty .section {
+  background-color: gray;
+}
+
+.strong .section {
+  background-color: green;
+}
+
+.short .section {
+  background-color: red;
+}
+
+.easy .section:first-child {
+  background-color: red;
+}
+
+.easy .section {
+  background-color: gray;
+}
+
+.medium .section {
+  background-color: yellow;
+}
+
+.medium .section:last-child {
+  background-color: gray;
+}

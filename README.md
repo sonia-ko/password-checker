@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Typical password checker
 
 Create applications to test password strength.
 

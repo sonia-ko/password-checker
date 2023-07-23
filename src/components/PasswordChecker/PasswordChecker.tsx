@@ -1,11 +1,11 @@
 import React from "react";
-import classes from "./PasswordInput.module.css";
+import classes from "./PasswordChecker.module.css";
 import { useState } from "react";
-import checkPasswordStrength from "../helpers/checkPasswordStrength";
-import NotificationSection from "./NotificationsSection";
+import checkPasswordStrength from "../../helpers/checkPasswordStrength";
+import NotificationSection from "../NotificationSection/NotificationsSection";
+import PasswordInput from "../PasswordInput/PasswordInput";
 
-const PasswordInput: React.FC = () => {
-  const [passwordShown, setPasswordShown] = useState(false);
+const PasswordChecker: React.FC = () => {
   const [enteredPassword, setEnteredPassword] = useState("");
   const [strength, setStrength] = useState<PasswordStrength>("easy");
   const [containsLetters, setContainsLetters] = useState(false);
@@ -24,14 +24,6 @@ const PasswordInput: React.FC = () => {
     setContainsSymbols(pwdStrength.contains.symbols);
   };
 
-  const handleMouseDown = () => {
-    setPasswordShown(true);
-  };
-
-  const handleMouseUp = () => {
-    setPasswordShown(false);
-  };
-
   const handleCopyPassword = async () => {
     try {
       await navigator.clipboard.writeText(enteredPassword);
@@ -44,33 +36,23 @@ const PasswordInput: React.FC = () => {
 
   return (
     <div className={classes.container}>
-      <label>Please enter your password:</label>
-      <input
-        onChange={handleInputChange}
-        value={enteredPassword}
-        type={passwordShown ? "text" : "password"}
+      <PasswordInput
+        enteredPassword={enteredPassword}
+        handleInputChange={handleInputChange}
       />
-      <p className={classes.p}>
-        Password strength: {enteredPassword.length < 8 ? "Too short" : strength}
-      </p>
+
       <p className={classes.p}>
         {copyNotification ? "Password copied to clipboard" : " "}
       </p>
       <button
+        className={classes.copyButton}
         disabled={enteredPassword.length < 8}
         type="button"
         onClick={handleCopyPassword}
       >
         Copy Password
       </button>
-      <button
-        onMouseDown={handleMouseDown}
-        onMouseUp={handleMouseUp}
-        onMouseLeave={handleMouseUp}
-        type="button"
-      >
-        {passwordShown ? "Hide" : "Show"} password
-      </button>
+
       <NotificationSection
         letters={containsLetters}
         numbers={containsNumbers}
@@ -82,4 +64,4 @@ const PasswordInput: React.FC = () => {
   );
 };
 
-export default PasswordInput;
+export default PasswordChecker;

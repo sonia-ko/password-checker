@@ -15,7 +15,6 @@ const checkPasswordStrength = (password: string): PasswordStrengthType => {
   let passwordLevel = 0;
 
   let passwordStrength = {
-    // level: 0,
     contains: {
       letters: lettersRegex.test(password),
       symbols: symbolsRegex.test(password),

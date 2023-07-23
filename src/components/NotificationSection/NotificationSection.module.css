@@ -4,11 +4,6 @@
   min-height: 9rem;
 }
 
-.container p {
-  margin: 0;
-  padding: 0;
-}
-
 .ul li {
   margin: 1rem 0;
   padding: 1rem;
@@ -21,26 +16,26 @@
 }
 
 .short .ul li {
-  background-color: rgba(255, 0, 0, 0.404);
+  background-color: rgba(255, 0, 0, 0.288);
 }
 
 .strong .ul li {
-  background-color: rgba(55, 141, 55, 0.555);
+  background-color: rgba(55, 141, 55, 0.39);
 }
 
 .easy .ul > li:first-child {
-  background-color: rgba(255, 0, 0, 0.404);
+  background-color: rgba(255, 0, 0, 0.295);
 }
 
 .easy .ul li {
-  background-color: #8f848488;
+  background-color: #8f84845d;
 }
 
 .medium .ul > li:last-child,
 .medium .ul > li:last-child li {
-  background-color: #8f848488;
+  background-color: #8f848469;
 }
 
 .medium .ul li {
-  background-color: rgba(225, 228, 62, 0.623);
+  background-color: rgba(225, 228, 62, 0.562);
 }

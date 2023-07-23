@@ -1,12 +1,12 @@
 import React from "react";
 import classes from "./Form.module.css";
-import PasswordInput from "./PasswordInput";
+import PasswordChecker from "../PasswordChecker/PasswordChecker";
 
 const Form: React.FC = () => {
   return (
     <form className={classes.container}>
       <h1>A typical password checker</h1>
-      <PasswordInput />
+      <PasswordChecker />
     </form>
   );
 };
